@@ -31,7 +31,7 @@ namespace MegaDesk_Alkire
         private void CustomerNameTextField_TextChanged(object sender, EventArgs e)
         {
             // Assign the entered customer name to the _customerName variable of the new deskQuote object.
-            deskQuote._customerName = CustomerNameTextField.Text;
+            deskQuote.CustomerName = CustomerNameTextField.Text;
 
             try
             {
@@ -205,22 +205,22 @@ namespace MegaDesk_Alkire
         {
             if (RushOrderComboBox.Text == "3 Days")
             {
-                deskQuote._rushDays = 3;
+                deskQuote.RushDays = 3;
             }
             else if (RushOrderComboBox.Text == "5 Days")
             {
-                deskQuote._rushDays = 5;
+                deskQuote.RushDays = 5;
             }
             else if (RushOrderComboBox.Text == "7 Days")
             {
-                deskQuote._rushDays = 7;
+                deskQuote.RushDays = 7;
             }
         }
 
         private void SubmitAddQuoteButton_Click(object sender, EventArgs e)
         {
             // Write quote data to file to submit order. This method will also handle quote total calculations within the DeskQuote class.
-            deskQuote.writeQuoteToFile(deskQuote._customerName, desk, desk.Width, desk.Depth, desk.DeskMaterial, desk.NumberOfDrawers, deskQuote._rushDays);
+            deskQuote.writeQuoteToFile(deskQuote.CustomerName, desk, desk.Width, desk.Depth, desk.DeskMaterial, desk.NumberOfDrawers, deskQuote.RushDays);
             MessageBox.Show("Order submitted!");
 
             // Display current quote.

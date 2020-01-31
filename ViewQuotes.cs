@@ -34,7 +34,7 @@ namespace MegaDesk_Alkire
 
             try
             {
-                lines = File.ReadAllLines(@"c:\tmp\DeskQuotes.txt");
+                lines = File.ReadAllLines("..\\..\\quotes.json");
             }
             catch (FileNotFoundException)
             {

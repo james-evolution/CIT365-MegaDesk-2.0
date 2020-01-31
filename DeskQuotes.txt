@@ -1,0 +1,7 @@
+Customer Name: BBB
+Desk Width: 96
+Desk Depth: 84
+Desk Material: Oak
+Desk Drawer Count: 1
+Rush Order: 7
+Quote Total: $8554

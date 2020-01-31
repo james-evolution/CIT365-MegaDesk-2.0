@@ -30,6 +30,8 @@
         {
             this.ExitViewQuotesButton = new System.Windows.Forms.Button();
             this.ViewQuotesTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitViewQuotesButton
@@ -46,13 +48,21 @@
             // 
             // ViewQuotesTextBox
             // 
-            this.ViewQuotesTextBox.Location = new System.Drawing.Point(11, 12);
+            this.ViewQuotesTextBox.Location = new System.Drawing.Point(12, 180);
             this.ViewQuotesTextBox.Multiline = true;
             this.ViewQuotesTextBox.Name = "ViewQuotesTextBox";
-            this.ViewQuotesTextBox.Size = new System.Drawing.Size(274, 298);
+            this.ViewQuotesTextBox.Size = new System.Drawing.Size(273, 130);
             this.ViewQuotesTextBox.TabIndex = 1;
             this.ViewQuotesTextBox.Tag = "ViewQuotesTextBox";
             this.ViewQuotesTextBox.TextChanged += new System.EventHandler(this.ViewQuotesTextBox_TextChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(273, 162);
+            this.dataGridView1.TabIndex = 2;
             // 
             // ViewQuotes
             // 
@@ -60,12 +70,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ExitViewQuotesButton;
             this.ClientSize = new System.Drawing.Size(297, 351);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ViewQuotesTextBox);
             this.Controls.Add(this.ExitViewQuotesButton);
             this.Name = "ViewQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Quotes";
             this.Load += new System.EventHandler(this.ViewQuotes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,5 +87,6 @@
 
         private System.Windows.Forms.Button ExitViewQuotesButton;
         private System.Windows.Forms.TextBox ViewQuotesTextBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
