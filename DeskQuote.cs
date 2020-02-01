@@ -21,7 +21,7 @@ namespace MegaDesk_Alkire
         public double QuoteTotal { get; set; }
         public const int SQUAREPRICE = 1;
         public const int DRAWERPRICE = 50;
-
+        public List<DeskQuote> deskQuotes = new List<DeskQuote>();
         public void writeQuoteToFile(string customerName, Desk desk, int width, int depth, 
             SurfaceMaterial material, int numberOfDrawers, int rushOrderOptions)
         {
@@ -45,7 +45,20 @@ namespace MegaDesk_Alkire
                             "Quote Total: $" + deskQuote.QuoteTotal;
             DisplayQuote.Quote = displayOutput;
 
-            File.AppendAllText("..\\..\\quotes.json", JsonConvert.SerializeObject(deskQuote));
+            if (!File.Exists("..\\..\\quotes.json")) 
+            {
+                File.Create("..\\..\\quotes.json").Close();
+            }
+
+            var data = File.ReadAllText("..\\..\\quotes.json");
+
+            var listQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(data) ?? new List<DeskQuote>();
+
+            listQuotes.Add(deskQuote);
+
+            data = JsonConvert.SerializeObject(listQuotes.ToArray());
+            File.WriteAllText("..\\..\\quotes.json", data);
+
         }
 
         public double calculateTotalQuote(Desk desk, int width, int depth,

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,21 +32,31 @@ namespace MegaDesk_Alkire
             // string line = File.ReadAllText(@"c:\tmp\DeskQuotes.txt");
             // MessageBox.Show(line);
             string[] lines = new string[] { };
+            string json = "";
 
             try
             {
+                json = File.ReadAllText("..\\..\\quotes.json");
                 lines = File.ReadAllLines("..\\..\\quotes.json");
             }
             catch (FileNotFoundException)
             {
                 Console.WriteLine(e);
             }
-            
-
             for (int i = 0; i < lines.Length; i++)
             {
                 ViewQuotesTextBox.AppendText(lines[i] + Environment.NewLine);
             }
+
+
+            List<DeskQuote> DeskList = new List<DeskQuote>();
+
+            var convertedJson = JsonConvert.SerializeObject(DeskList, Formatting.Indented);
+
+            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+            dataGridView1.DataSource = quoteList;
+
         }
 
         private void ViewQuotesTextBox_TextChanged(object sender, EventArgs e)
