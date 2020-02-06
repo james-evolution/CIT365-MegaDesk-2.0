@@ -50,9 +50,10 @@
             // ExitAddQuoteButton
             // 
             this.ExitAddQuoteButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExitAddQuoteButton.Location = new System.Drawing.Point(204, 263);
+            this.ExitAddQuoteButton.Location = new System.Drawing.Point(306, 405);
+            this.ExitAddQuoteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitAddQuoteButton.Name = "ExitAddQuoteButton";
-            this.ExitAddQuoteButton.Size = new System.Drawing.Size(173, 23);
+            this.ExitAddQuoteButton.Size = new System.Drawing.Size(260, 35);
             this.ExitAddQuoteButton.TabIndex = 8;
             this.ExitAddQuoteButton.Tag = "ExitAddQuoteButon";
             this.ExitAddQuoteButton.Text = "Close";
@@ -61,9 +62,10 @@
             // 
             // CustomerNameTextField
             // 
-            this.CustomerNameTextField.Location = new System.Drawing.Point(204, 25);
+            this.CustomerNameTextField.Location = new System.Drawing.Point(306, 38);
+            this.CustomerNameTextField.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CustomerNameTextField.Name = "CustomerNameTextField";
-            this.CustomerNameTextField.Size = new System.Drawing.Size(170, 20);
+            this.CustomerNameTextField.Size = new System.Drawing.Size(253, 26);
             this.CustomerNameTextField.TabIndex = 1;
             this.CustomerNameTextField.Tag = "CustomerNameTextField";
             this.CustomerNameTextField.Text = "Please enter your full name.";
@@ -74,10 +76,11 @@
             // 
             this.CustomerNameLabel.AutoSize = true;
             this.CustomerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerNameLabel.Location = new System.Drawing.Point(12, 15);
+            this.CustomerNameLabel.Location = new System.Drawing.Point(18, 23);
+            this.CustomerNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
-            this.CustomerNameLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.CustomerNameLabel.Size = new System.Drawing.Size(129, 37);
+            this.CustomerNameLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.CustomerNameLabel.Size = new System.Drawing.Size(184, 55);
             this.CustomerNameLabel.TabIndex = 2;
             this.CustomerNameLabel.Tag = "CustomerNameLabel";
             this.CustomerNameLabel.Text = "Customer Name";
@@ -88,10 +91,11 @@
             // 
             this.DeskWidthLabel.AutoSize = true;
             this.DeskWidthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskWidthLabel.Location = new System.Drawing.Point(12, 52);
+            this.DeskWidthLabel.Location = new System.Drawing.Point(18, 80);
+            this.DeskWidthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeskWidthLabel.Name = "DeskWidthLabel";
-            this.DeskWidthLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.DeskWidthLabel.Size = new System.Drawing.Size(155, 37);
+            this.DeskWidthLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DeskWidthLabel.Size = new System.Drawing.Size(219, 55);
             this.DeskWidthLabel.TabIndex = 4;
             this.DeskWidthLabel.Tag = "DeskWidthLabel";
             this.DeskWidthLabel.Text = "Desk Width (inches)";
@@ -102,10 +106,11 @@
             // 
             this.DeskDepthLabel.AutoSize = true;
             this.DeskDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskDepthLabel.Location = new System.Drawing.Point(12, 89);
+            this.DeskDepthLabel.Location = new System.Drawing.Point(18, 137);
+            this.DeskDepthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeskDepthLabel.Name = "DeskDepthLabel";
-            this.DeskDepthLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.DeskDepthLabel.Size = new System.Drawing.Size(157, 37);
+            this.DeskDepthLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DeskDepthLabel.Size = new System.Drawing.Size(220, 55);
             this.DeskDepthLabel.TabIndex = 6;
             this.DeskDepthLabel.Tag = "DeskDepthLabel";
             this.DeskDepthLabel.Text = "Desk Depth (inches)";
@@ -116,10 +121,11 @@
             // 
             this.DrawerCountLabel.AutoSize = true;
             this.DrawerCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DrawerCountLabel.Location = new System.Drawing.Point(12, 126);
+            this.DrawerCountLabel.Location = new System.Drawing.Point(18, 194);
+            this.DrawerCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DrawerCountLabel.Name = "DrawerCountLabel";
-            this.DrawerCountLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.DrawerCountLabel.Size = new System.Drawing.Size(150, 37);
+            this.DrawerCountLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DrawerCountLabel.Size = new System.Drawing.Size(209, 55);
             this.DrawerCountLabel.TabIndex = 8;
             this.DrawerCountLabel.Tag = "DrawerCountLabel";
             this.DrawerCountLabel.Text = "Number of Drawers";
@@ -130,10 +136,11 @@
             // 
             this.DesktopMaterialLabel.AutoSize = true;
             this.DesktopMaterialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesktopMaterialLabel.Location = new System.Drawing.Point(12, 163);
+            this.DesktopMaterialLabel.Location = new System.Drawing.Point(18, 251);
+            this.DesktopMaterialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DesktopMaterialLabel.Name = "DesktopMaterialLabel";
-            this.DesktopMaterialLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.DesktopMaterialLabel.Size = new System.Drawing.Size(134, 37);
+            this.DesktopMaterialLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DesktopMaterialLabel.Size = new System.Drawing.Size(188, 55);
             this.DesktopMaterialLabel.TabIndex = 10;
             this.DesktopMaterialLabel.Tag = "DesktopMaterialLabel";
             this.DesktopMaterialLabel.Text = "Desktop Material";
@@ -144,10 +151,11 @@
             // 
             this.RushOrderLabel.AutoSize = true;
             this.RushOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RushOrderLabel.Location = new System.Drawing.Point(12, 200);
+            this.RushOrderLabel.Location = new System.Drawing.Point(18, 308);
+            this.RushOrderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RushOrderLabel.Name = "RushOrderLabel";
-            this.RushOrderLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.RushOrderLabel.Size = new System.Drawing.Size(155, 37);
+            this.RushOrderLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.RushOrderLabel.Size = new System.Drawing.Size(215, 55);
             this.RushOrderLabel.TabIndex = 12;
             this.RushOrderLabel.Tag = "RushOrderLabel";
             this.RushOrderLabel.Text = "Rush Order Options";
@@ -156,9 +164,10 @@
             // SubmitAddQuoteButton
             // 
             this.SubmitAddQuoteButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.SubmitAddQuoteButton.Location = new System.Drawing.Point(12, 263);
+            this.SubmitAddQuoteButton.Location = new System.Drawing.Point(18, 405);
+            this.SubmitAddQuoteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubmitAddQuoteButton.Name = "SubmitAddQuoteButton";
-            this.SubmitAddQuoteButton.Size = new System.Drawing.Size(173, 23);
+            this.SubmitAddQuoteButton.Size = new System.Drawing.Size(260, 35);
             this.SubmitAddQuoteButton.TabIndex = 7;
             this.SubmitAddQuoteButton.Tag = "SubmitAddQuoteButton";
             this.SubmitAddQuoteButton.Text = "Submit";
@@ -174,9 +183,10 @@
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.DesktopMaterialComboBox.Location = new System.Drawing.Point(204, 172);
+            this.DesktopMaterialComboBox.Location = new System.Drawing.Point(306, 265);
+            this.DesktopMaterialComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DesktopMaterialComboBox.Name = "DesktopMaterialComboBox";
-            this.DesktopMaterialComboBox.Size = new System.Drawing.Size(170, 21);
+            this.DesktopMaterialComboBox.Size = new System.Drawing.Size(253, 28);
             this.DesktopMaterialComboBox.TabIndex = 5;
             this.DesktopMaterialComboBox.Tag = "DesktopMaterialComboBox";
             this.DesktopMaterialComboBox.Text = "Laminate";
@@ -189,9 +199,10 @@
             "3 Days",
             "5 Days",
             "7 Days"});
-            this.RushOrderComboBox.Location = new System.Drawing.Point(204, 209);
+            this.RushOrderComboBox.Location = new System.Drawing.Point(306, 322);
+            this.RushOrderComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RushOrderComboBox.Name = "RushOrderComboBox";
-            this.RushOrderComboBox.Size = new System.Drawing.Size(170, 21);
+            this.RushOrderComboBox.Size = new System.Drawing.Size(253, 28);
             this.RushOrderComboBox.TabIndex = 6;
             this.RushOrderComboBox.Tag = "RushOrderComboBox";
             this.RushOrderComboBox.Text = "Choose from 3, 5, or 7 days.";
@@ -199,14 +210,15 @@
             // 
             // DrawersNumericUpDown
             // 
-            this.DrawersNumericUpDown.Location = new System.Drawing.Point(204, 136);
+            this.DrawersNumericUpDown.Location = new System.Drawing.Point(306, 209);
+            this.DrawersNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DrawersNumericUpDown.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.DrawersNumericUpDown.Name = "DrawersNumericUpDown";
-            this.DrawersNumericUpDown.Size = new System.Drawing.Size(170, 20);
+            this.DrawersNumericUpDown.Size = new System.Drawing.Size(255, 26);
             this.DrawersNumericUpDown.TabIndex = 4;
             this.DrawersNumericUpDown.Tag = "DrawersNumericUpDown";
             this.DrawersNumericUpDown.ValueChanged += new System.EventHandler(this.DrawersNumericUpDown_ValueChanged);
@@ -214,9 +226,10 @@
             // 
             // WidthNumericUpDown
             // 
-            this.WidthNumericUpDown.Location = new System.Drawing.Point(204, 62);
+            this.WidthNumericUpDown.Location = new System.Drawing.Point(306, 95);
+            this.WidthNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.WidthNumericUpDown.Name = "WidthNumericUpDown";
-            this.WidthNumericUpDown.Size = new System.Drawing.Size(170, 20);
+            this.WidthNumericUpDown.Size = new System.Drawing.Size(255, 26);
             this.WidthNumericUpDown.TabIndex = 2;
             this.WidthNumericUpDown.Tag = "WidthNumericUpDown";
             this.WidthNumericUpDown.ValueChanged += new System.EventHandler(this.WidthNumericUpDown_ValueChanged);
@@ -225,21 +238,22 @@
             // 
             // DepthNumericUpDown
             // 
-            this.DepthNumericUpDown.Location = new System.Drawing.Point(204, 99);
+            this.DepthNumericUpDown.Location = new System.Drawing.Point(306, 152);
+            this.DepthNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DepthNumericUpDown.Name = "DepthNumericUpDown";
-            this.DepthNumericUpDown.Size = new System.Drawing.Size(170, 20);
+            this.DepthNumericUpDown.Size = new System.Drawing.Size(255, 26);
             this.DepthNumericUpDown.TabIndex = 3;
             this.DepthNumericUpDown.Tag = "DepthNumericUpDown";
             this.DepthNumericUpDown.ValueChanged += new System.EventHandler(this.DepthNumericUpDown_ValueChanged);
             this.DepthNumericUpDown.Enter += new System.EventHandler(this.DepthNumericUpDown_Enter);
-            this.DepthNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DepthNumericUpDown_KeyPress);
+            this.DepthNumericUpDown.Validating += new System.ComponentModel.CancelEventHandler(this.DepthValidating);
             // 
             // AddQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ExitAddQuoteButton;
-            this.ClientSize = new System.Drawing.Size(389, 298);
+            this.ClientSize = new System.Drawing.Size(584, 458);
             this.Controls.Add(this.DepthNumericUpDown);
             this.Controls.Add(this.WidthNumericUpDown);
             this.Controls.Add(this.DrawersNumericUpDown);
@@ -254,6 +268,7 @@
             this.Controls.Add(this.CustomerNameLabel);
             this.Controls.Add(this.CustomerNameTextField);
             this.Controls.Add(this.ExitAddQuoteButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Quote";

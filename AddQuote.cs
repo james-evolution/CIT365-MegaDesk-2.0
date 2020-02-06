@@ -117,38 +117,7 @@ namespace MegaDesk_Alkire
             desk.Depth = Convert.ToInt32(DepthNumericUpDown.Value);
         }
 
-        private void DepthNumericUpDown_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            string text = Convert.ToString(DepthNumericUpDown.Value);
-
-            /* I utilized the IsControl and IsDigit methods here due to assignment requirements.
-             * It wasn't a necessary form of validation for this field because this is a NumericUpDown and they
-             * can only enter numbers to begin with, so I simply used console write lines to show when such characters
-             * were detected. I hope this sufficiently demonstrates my ability to use the methods. If I wanted
-             * to use them for validation I'd probably have to use a text field rather than a NumericUpDown. */
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (Char.IsControl(text, i))
-                {
-                    Console.WriteLine("Control character detected at position: " + i);
-                }
-                if (Char.IsDigit(text, i))
-                {
-                    Console.WriteLine("Digit detected.");
-                }
-            }
-
-            if (Convert.ToInt32(DepthNumericUpDown.Value) < Desk.MINDEPTH)
-            {
-                MessageBox.Show("You need to enter a value of at least 12 inches.");
-                DepthNumericUpDown.Focus();
-            }
-            else if (Convert.ToInt32(DepthNumericUpDown.Value) > Desk.MAXDEPTH)
-            {
-                MessageBox.Show("You need to enter a value equal to or less than 48 inches.");
-                DepthNumericUpDown.Focus();
-            }
-        }
+    
 
         private void DepthNumericUpDown_Enter(object sender, EventArgs e)
         {
@@ -237,6 +206,39 @@ namespace MegaDesk_Alkire
 
             // Close this window.
             // Close();
+        }
+
+        private void DepthValidating(object sender, CancelEventArgs e)
+        {
+            string text = Convert.ToString(DepthNumericUpDown.Value);
+
+            /* I utilized the IsControl and IsDigit methods here due to assignment requirements.
+             * It wasn't a necessary form of validation for this field because this is a NumericUpDown and they
+             * can only enter numbers to begin with, so I simply used console write lines to show when such characters
+             * were detected. I hope this sufficiently demonstrates my ability to use the methods. If I wanted
+             * to use them for validation I'd probably have to use a text field rather than a NumericUpDown. */
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (Char.IsControl(text, i))
+                {
+                    Console.WriteLine("Control character detected at position: " + i);
+                }
+                if (Char.IsDigit(text, i))
+                {
+                    Console.WriteLine("Digit detected.");
+                }
+            }
+
+            if (Convert.ToInt32(DepthNumericUpDown.Value) < Desk.MINDEPTH)
+            {
+                MessageBox.Show("You need to enter a value of at least 12 inches.");
+                DepthNumericUpDown.Focus();
+            }
+            else if (Convert.ToInt32(DepthNumericUpDown.Value) > Desk.MAXDEPTH)
+            {
+                MessageBox.Show("You need to enter a value equal to or less than 48 inches.");
+                DepthNumericUpDown.Focus();
+            }
         }
     }
 }
