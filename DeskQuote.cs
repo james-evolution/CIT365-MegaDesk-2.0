@@ -14,11 +14,15 @@ namespace MegaDesk_Alkire
 {
     class DeskQuote
     {
+        public SurfaceMaterial DeskMaterial { get; set; }
         public Desk Desk { get; set; }
         public int RushDays { get; set; } // 3, 5, or 7 days. Normal production time = 14 days.
         public string CustomerName { get; set; }
         public DateTime QuoteDate { get; set; }
         public double QuoteTotal { get; set; }
+        public int Width { get; set; }
+        public int Depth { get; set; }
+        public int NumberOfDrawers { get; set; }
         public const int SQUAREPRICE = 1;
         public const int DRAWERPRICE = 50;
         public List<DeskQuote> deskQuotes = new List<DeskQuote>();
@@ -93,13 +97,30 @@ namespace MegaDesk_Alkire
                 materialPrice = materialPriceList[4];
             }
 
+            // TextReader reader = File.OpenText("..\\Resources\\rushOrderPrices.txt");
+
+            // Read file as a list of strings, assign it to rushPriceStrings[]
+            string[] rushPriceStrings = File.ReadAllLines("..\\..\\Resources\\rushOrderPrices.txt");
+
+            // Create list of doubles to hold rushPrices as a list.
+            List<double> rushPricesList = new List<double>();
+
+            for (int i = 0; i < rushPriceStrings.Length; i++)
+            {
+                // Add rushPriceStrings[] elements to rushPricesList.
+                rushPricesList.Add(Convert.ToDouble(rushPriceStrings[i]));
+            }
+
+            // Cast rushPricesList to array, assign to rushPrices[].
+            double[] rushPrices = rushPricesList.ToArray();
+
             // Calculate rushPrice.
             switch (rushOrderOptions)
             {
                 case 3:
                     if (surfaceArea < 1000)
                     {
-                        rushPrice = 60;
+                        rushPrice = rushPrices[0];
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
