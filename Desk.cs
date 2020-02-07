@@ -25,7 +25,7 @@ rush order options of 3, 5, or 7 days. The normal production time is 14 days.
  * Local variable: lowerCamelCase
  * Parameter: lowerCamelCase
  * */
-namespace MegaDesk_Alkire
+namespace MegaDesk2
 {
     class Desk
     {

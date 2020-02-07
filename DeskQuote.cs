@@ -10,7 +10,7 @@ using Newtonsoft.Json.Converters;
 /* DeskQuote.cs (Class): This class will define the attributes of a quote 
  * including Desk, rush days, customer name, and quote date. This class will 
  * also hold the logic in determining the desk quote total.*/
-namespace MegaDesk_Alkire
+namespace MegaDesk2
 {
     class DeskQuote
     {

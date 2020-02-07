@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C652D76-F12E-41F8-A569-CD70DD2740B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MegaDesk_Alkire</RootNamespace>
-    <AssemblyName>MegaDesk-Alkire</AssemblyName>
+    <RootNamespace>MegaDesk2</RootNamespace>
+    <AssemblyName>MegaDesk2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

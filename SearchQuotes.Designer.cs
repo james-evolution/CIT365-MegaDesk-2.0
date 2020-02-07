@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_Alkire
+﻿namespace MegaDesk2
 {
     partial class SearchQuotes
     {
