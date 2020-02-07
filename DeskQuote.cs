@@ -34,11 +34,16 @@ namespace MegaDesk_Alkire
             deskQuote.Desk = desk;
             deskQuote.Desk.Width = width;
             deskQuote.Desk.Depth = depth;
-            deskQuote.Desk.DeskMaterial = material;
+            deskQuote.Desk.DeskMaterial = material;            
             deskQuote.Desk.NumberOfDrawers = numberOfDrawers;
             deskQuote.RushDays = rushOrderOptions;
             deskQuote.QuoteTotal = calculateTotalQuote(deskQuote.Desk, deskQuote.Desk.Width, 
             deskQuote.Desk.Depth, deskQuote.Desk.DeskMaterial, deskQuote.Desk.NumberOfDrawers, deskQuote.RushDays);
+
+            deskQuote.DeskMaterial = material;
+            deskQuote.NumberOfDrawers = numberOfDrawers;
+            deskQuote.Depth = depth;
+            deskQuote.Width = width;
 
             string displayOutput = "Customer Name: " + deskQuote.CustomerName + Environment.NewLine +
                             "Desk Width: " + deskQuote.Desk.Width + Environment.NewLine +
