@@ -58,7 +58,7 @@
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.SearchQuotesMaterialComboBox.Location = new System.Drawing.Point(204, 14);
+            this.SearchQuotesMaterialComboBox.Location = new System.Drawing.Point(217, 14);
             this.SearchQuotesMaterialComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchQuotesMaterialComboBox.Name = "SearchQuotesMaterialComboBox";
             this.SearchQuotesMaterialComboBox.Size = new System.Drawing.Size(166, 28);
@@ -74,10 +74,10 @@
             this.SearchQuotesSearchMaterialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchQuotesSearchMaterialLabel.Name = "SearchQuotesSearchMaterialLabel";
             this.SearchQuotesSearchMaterialLabel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.SearchQuotesSearchMaterialLabel.Size = new System.Drawing.Size(165, 41);
+            this.SearchQuotesSearchMaterialLabel.Size = new System.Drawing.Size(190, 41);
             this.SearchQuotesSearchMaterialLabel.TabIndex = 2;
             this.SearchQuotesSearchMaterialLabel.Tag = "SearchQuotesSearchMaterialLabel";
-            this.SearchQuotesSearchMaterialLabel.Text = "Search Material";
+            this.SearchQuotesSearchMaterialLabel.Text = "Search by material";
             // 
             // resultsGridView
             // 

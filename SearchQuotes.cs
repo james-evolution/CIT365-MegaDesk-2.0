@@ -74,6 +74,8 @@ namespace MegaDesk2
 
             resultsGridView.DataSource = resultsList;
             Count.Text = resultsGridView.RowCount.ToString() + " Results";
+            resultsGridView.Columns[3].DefaultCellStyle.Format = "d";
+            resultsGridView.Columns[4].DefaultCellStyle.Format = "c";
         }
     }
 }
