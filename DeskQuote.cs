@@ -16,14 +16,15 @@ namespace MegaDesk2
     class DeskQuote
     {
         public SurfaceMaterial DeskMaterial { get; set; }
-        public Desk Desk { get; set; }
-        public int RushDays { get; set; } // 3, 5, or 7 days. Normal production time = 14 days.
+        public int ShippingDays { get; set; } // 3, 5, or 7 days. Normal production time = 14 days.
         public string CustomerName { get; set; }
         public DateTime QuoteDate { get; set; }
         public double QuoteTotal { get; set; }
         public int Width { get; set; }
         public int Depth { get; set; }
         public int NumberOfDrawers { get; set; }
+        public Desk Desk { get; set; }
+
         public const int SQUAREPRICE = 1;
         public const int DRAWERPRICE = 50;
         public List<DeskQuote> deskQuotes = new List<DeskQuote>();
@@ -37,21 +38,25 @@ namespace MegaDesk2
             deskQuote.Desk.Depth = depth;
             deskQuote.Desk.DeskMaterial = material;            
             deskQuote.Desk.NumberOfDrawers = numberOfDrawers;
-            deskQuote.RushDays = rushOrderOptions;
+            deskQuote.ShippingDays = rushOrderOptions;
             deskQuote.QuoteTotal = calculateTotalQuote(deskQuote.Desk, deskQuote.Desk.Width, 
-            deskQuote.Desk.Depth, deskQuote.Desk.DeskMaterial, deskQuote.Desk.NumberOfDrawers, deskQuote.RushDays);
-
+            deskQuote.Desk.Depth, deskQuote.Desk.DeskMaterial, deskQuote.Desk.NumberOfDrawers, deskQuote.ShippingDays);
+            deskQuote.QuoteDate = DateTime.Now;
             deskQuote.DeskMaterial = material;
             deskQuote.NumberOfDrawers = numberOfDrawers;
             deskQuote.Depth = depth;
             deskQuote.Width = width;
+
+            string date = deskQuote.QuoteDate.ToString("MM/dd/yyyy");
+            
 
             string displayOutput = "Customer Name: " + deskQuote.CustomerName + Environment.NewLine +
                             "Desk Width: " + deskQuote.Desk.Width + Environment.NewLine +
                             "Desk Depth: " + deskQuote.Desk.Depth + Environment.NewLine +
                             "Desk Material: " + deskQuote.Desk.DeskMaterial + Environment.NewLine +
                             "Desk Drawer Count: " + deskQuote.Desk.NumberOfDrawers + Environment.NewLine +
-                            "Rush Order: " + deskQuote.RushDays + Environment.NewLine +
+                            "Rush Order: " + deskQuote.ShippingDays + Environment.NewLine +
+                            "Quate Date: " + date + Environment.NewLine +
                             "Quote Total: $" + deskQuote.QuoteTotal;
             DisplayQuote.Quote = displayOutput;
 
@@ -148,7 +153,6 @@ namespace MegaDesk2
                     }
                     break;
                 default:
-                    MessageBox.Show("Invalid Rush Order Option.", "Error");
                     break;
             }
 

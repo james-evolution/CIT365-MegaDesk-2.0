@@ -41,7 +41,7 @@ namespace MegaDesk2
      
             List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
             dataGridView1.DataSource = quoteList;
-
+            dataGridView1.Columns[3].DefaultCellStyle.Format = "d";
         }
     }
 }

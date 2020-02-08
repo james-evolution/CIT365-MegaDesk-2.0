@@ -36,7 +36,7 @@
             // ExitViewQuotesButton
             // 
             this.ExitViewQuotesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExitViewQuotesButton.Location = new System.Drawing.Point(1356, 491);
+            this.ExitViewQuotesButton.Location = new System.Drawing.Point(1379, 491);
             this.ExitViewQuotesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitViewQuotesButton.Name = "ExitViewQuotesButton";
             this.ExitViewQuotesButton.Size = new System.Drawing.Size(112, 35);
@@ -49,11 +49,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 18);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1450, 463);
+            this.dataGridView1.Size = new System.Drawing.Size(1478, 463);
             this.dataGridView1.TabIndex = 2;
             // 
             // ViewQuotes
@@ -61,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ExitViewQuotesButton;
-            this.ClientSize = new System.Drawing.Size(1481, 540);
+            this.ClientSize = new System.Drawing.Size(1504, 540);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ExitViewQuotesButton);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

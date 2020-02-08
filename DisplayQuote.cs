@@ -29,8 +29,6 @@ namespace MegaDesk2
         private void ExitDisplayQuoteButton_Click(object sender, EventArgs e)
         {
             Hide();
-            // MainMenu menu = new MainMenu();
-            // menu.Show();
         }
 
         // May or may not work yet. Manually written.

@@ -18,13 +18,13 @@ namespace MegaDesk2
         public AddQuote()
         {
             InitializeComponent();
+            deskQuote.ShippingDays = 14;
         }
 
         private void ExitAddQuoteButton_Click(object sender, EventArgs e)
         {
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
-            // This is technically this.Close();
             Close();
         }
 
@@ -40,45 +40,9 @@ namespace MegaDesk2
             catch(Exception)
             {
                 MessageBox.Show("");
-                // Throw
             }
 
         }
-
-        private void CustomerNameTextField_Validating(object sender, CancelEventArgs e)
-        {
-            // This empties out the text box value.
-            // CustomerNameTextField.Text = String.Empty;
-            // This gives the text box focus.
-            // CustomerNameTextField.Focus();
-        }
-
-        #region label on clicks
-        private void CustomerNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeskWidthLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeskDepthLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DrawerCountLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DesktopMaterialLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion label on clicks
 
         private void WidthNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -116,8 +80,6 @@ namespace MegaDesk2
         {
             desk.Depth = Convert.ToInt32(DepthNumericUpDown.Value);
         }
-
-    
 
         private void DepthNumericUpDown_Enter(object sender, EventArgs e)
         {
@@ -174,38 +136,33 @@ namespace MegaDesk2
         {
             if (RushOrderComboBox.Text == "3 Days")
             {
-                deskQuote.RushDays = 3;
+                deskQuote.ShippingDays = 3;
             }
             else if (RushOrderComboBox.Text == "5 Days")
             {
-                deskQuote.RushDays = 5;
+                deskQuote.ShippingDays = 5;
             }
             else if (RushOrderComboBox.Text == "7 Days")
             {
-                deskQuote.RushDays = 7;
+                deskQuote.ShippingDays = 7;
+            }
+            else if (RushOrderComboBox.Text == "14 Days")
+            {
+                deskQuote.ShippingDays = 14;
             }
         }
 
         private void SubmitAddQuoteButton_Click(object sender, EventArgs e)
         {
             // Write quote data to file to submit order. This method will also handle quote total calculations within the DeskQuote class.
-            deskQuote.writeQuoteToFile(deskQuote.CustomerName, desk, desk.Width, desk.Depth, desk.DeskMaterial, desk.NumberOfDrawers, deskQuote.RushDays);
+            deskQuote.writeQuoteToFile(deskQuote.CustomerName, desk, desk.Width, desk.Depth, desk.DeskMaterial, desk.NumberOfDrawers, deskQuote.ShippingDays);
             MessageBox.Show("Order submitted!");
-
-            // Display current quote.
             DisplayQuote viewDisplayQuote = new DisplayQuote();
             viewDisplayQuote.Tag = this;
             viewDisplayQuote.Show(this);
-
-            // Hide this window.
             Hide();
-
-            // Display MainMenu.
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
-
-            // Close this window.
-            // Close();
         }
 
         private void DepthValidating(object sender, CancelEventArgs e)

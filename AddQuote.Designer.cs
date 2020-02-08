@@ -70,7 +70,6 @@
             this.CustomerNameTextField.Tag = "CustomerNameTextField";
             this.CustomerNameTextField.Text = "Please enter your full name.";
             this.CustomerNameTextField.TextChanged += new System.EventHandler(this.CustomerNameTextField_TextChanged);
-            this.CustomerNameTextField.Validating += new System.ComponentModel.CancelEventHandler(this.CustomerNameTextField_Validating);
             // 
             // CustomerNameLabel
             // 
@@ -79,13 +78,12 @@
             this.CustomerNameLabel.Location = new System.Drawing.Point(18, 23);
             this.CustomerNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
-            this.CustomerNameLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.CustomerNameLabel.Padding = new System.Windows.Forms.Padding(15);
             this.CustomerNameLabel.Size = new System.Drawing.Size(184, 55);
             this.CustomerNameLabel.TabIndex = 2;
             this.CustomerNameLabel.Tag = "CustomerNameLabel";
             this.CustomerNameLabel.Text = "Customer Name";
             this.CustomerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CustomerNameLabel.Click += new System.EventHandler(this.CustomerNameLabel_Click);
             // 
             // DeskWidthLabel
             // 
@@ -94,13 +92,12 @@
             this.DeskWidthLabel.Location = new System.Drawing.Point(18, 80);
             this.DeskWidthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeskWidthLabel.Name = "DeskWidthLabel";
-            this.DeskWidthLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DeskWidthLabel.Padding = new System.Windows.Forms.Padding(15);
             this.DeskWidthLabel.Size = new System.Drawing.Size(219, 55);
             this.DeskWidthLabel.TabIndex = 4;
             this.DeskWidthLabel.Tag = "DeskWidthLabel";
             this.DeskWidthLabel.Text = "Desk Width (inches)";
             this.DeskWidthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeskWidthLabel.Click += new System.EventHandler(this.DeskWidthLabel_Click);
             // 
             // DeskDepthLabel
             // 
@@ -109,13 +106,12 @@
             this.DeskDepthLabel.Location = new System.Drawing.Point(18, 137);
             this.DeskDepthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeskDepthLabel.Name = "DeskDepthLabel";
-            this.DeskDepthLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DeskDepthLabel.Padding = new System.Windows.Forms.Padding(15);
             this.DeskDepthLabel.Size = new System.Drawing.Size(220, 55);
             this.DeskDepthLabel.TabIndex = 6;
             this.DeskDepthLabel.Tag = "DeskDepthLabel";
             this.DeskDepthLabel.Text = "Desk Depth (inches)";
             this.DeskDepthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeskDepthLabel.Click += new System.EventHandler(this.DeskDepthLabel_Click);
             // 
             // DrawerCountLabel
             // 
@@ -124,13 +120,12 @@
             this.DrawerCountLabel.Location = new System.Drawing.Point(18, 194);
             this.DrawerCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DrawerCountLabel.Name = "DrawerCountLabel";
-            this.DrawerCountLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DrawerCountLabel.Padding = new System.Windows.Forms.Padding(15);
             this.DrawerCountLabel.Size = new System.Drawing.Size(209, 55);
             this.DrawerCountLabel.TabIndex = 8;
             this.DrawerCountLabel.Tag = "DrawerCountLabel";
             this.DrawerCountLabel.Text = "Number of Drawers";
             this.DrawerCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DrawerCountLabel.Click += new System.EventHandler(this.DrawerCountLabel_Click);
             // 
             // DesktopMaterialLabel
             // 
@@ -139,13 +134,12 @@
             this.DesktopMaterialLabel.Location = new System.Drawing.Point(18, 251);
             this.DesktopMaterialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DesktopMaterialLabel.Name = "DesktopMaterialLabel";
-            this.DesktopMaterialLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.DesktopMaterialLabel.Padding = new System.Windows.Forms.Padding(15);
             this.DesktopMaterialLabel.Size = new System.Drawing.Size(188, 55);
             this.DesktopMaterialLabel.TabIndex = 10;
             this.DesktopMaterialLabel.Tag = "DesktopMaterialLabel";
             this.DesktopMaterialLabel.Text = "Desktop Material";
             this.DesktopMaterialLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DesktopMaterialLabel.Click += new System.EventHandler(this.DesktopMaterialLabel_Click);
             // 
             // RushOrderLabel
             // 
@@ -154,11 +148,11 @@
             this.RushOrderLabel.Location = new System.Drawing.Point(18, 308);
             this.RushOrderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RushOrderLabel.Name = "RushOrderLabel";
-            this.RushOrderLabel.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
-            this.RushOrderLabel.Size = new System.Drawing.Size(215, 55);
+            this.RushOrderLabel.Padding = new System.Windows.Forms.Padding(15);
+            this.RushOrderLabel.Size = new System.Drawing.Size(168, 55);
             this.RushOrderLabel.TabIndex = 12;
             this.RushOrderLabel.Tag = "RushOrderLabel";
-            this.RushOrderLabel.Text = "Rush Order Options";
+            this.RushOrderLabel.Text = "Shipping Time";
             this.RushOrderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SubmitAddQuoteButton
@@ -196,6 +190,7 @@
             // 
             this.RushOrderComboBox.FormattingEnabled = true;
             this.RushOrderComboBox.Items.AddRange(new object[] {
+            "14 Days",
             "3 Days",
             "5 Days",
             "7 Days"});
@@ -205,7 +200,7 @@
             this.RushOrderComboBox.Size = new System.Drawing.Size(253, 28);
             this.RushOrderComboBox.TabIndex = 6;
             this.RushOrderComboBox.Tag = "RushOrderComboBox";
-            this.RushOrderComboBox.Text = "Choose from 3, 5, or 7 days.";
+            this.RushOrderComboBox.Text = "14 Days";
             this.RushOrderComboBox.SelectedIndexChanged += new System.EventHandler(this.RushOrderComboBox_SelectedIndexChanged);
             // 
             // DrawersNumericUpDown
