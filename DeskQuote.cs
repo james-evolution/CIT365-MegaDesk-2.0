@@ -10,7 +10,7 @@ using Newtonsoft.Json.Converters;
 /* DeskQuote.cs (Class): This class will define the attributes of a quote 
  * including Desk, rush days, customer name, and quote date. This class will 
  * also hold the logic in determining the desk quote total.*/
-namespace MegaDesk_Alkire
+namespace MegaDesk2
 {
     class DeskQuote
     {
@@ -129,39 +129,39 @@ namespace MegaDesk_Alkire
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
-                        rushPrice = 70;
+                        rushPrice = rushPrices[1];
                     }
                     else if (surfaceArea > 2000)
                     {
-                        rushPrice = 80;
+                        rushPrice = rushPrices[2];
                     }
                     break;
                 case 5:
                     if (surfaceArea < 1000)
                     {
-                        rushPrice = 40;
+                        rushPrice = rushPrices[3];
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
-                        rushPrice = 50;
+                        rushPrice = rushPrices[4];
                     }
                     else if (surfaceArea > 2000)
                     {
-                        rushPrice = 60;
+                        rushPrice = rushPrices[5];
                     }
                     break;
                 case 7:
                     if (surfaceArea < 1000)
                     {
-                        rushPrice = 30;
+                        rushPrice = rushPrices[6];
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
-                        rushPrice = 35;
+                        rushPrice = rushPrices[7];
                     }
                     else if (surfaceArea > 2000)
                     {
-                        rushPrice = 40;
+                        rushPrice = rushPrices[8];
                     }
                     break;
                 default:

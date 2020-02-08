@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_Alkire
+﻿namespace MegaDesk2
 {
     partial class MainMenu
     {
@@ -83,7 +83,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MegaDesk_Alkire.Properties.Resources.TheActualDesk;
+            this.pictureBox1.Image = global::MegaDesk2.Properties.Resources.TheActualDesk;
             this.pictureBox1.Location = new System.Drawing.Point(156, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 174);

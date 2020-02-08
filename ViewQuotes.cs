@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk_Alkire
+namespace MegaDesk2
 {
     public partial class ViewQuotes : Form
     {
