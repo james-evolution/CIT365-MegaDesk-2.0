@@ -30,16 +30,5 @@ namespace MegaDesk2
         {
             Hide();
         }
-
-        // May or may not work yet. Manually written.
-        private void DisplayQuote_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DisplayQuoteTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

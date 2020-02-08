@@ -34,18 +34,18 @@
             // 
             // DisplayQuoteTextBox
             // 
+            this.DisplayQuoteTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DisplayQuoteTextBox.Location = new System.Drawing.Point(18, 18);
             this.DisplayQuoteTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DisplayQuoteTextBox.Multiline = true;
             this.DisplayQuoteTextBox.Name = "DisplayQuoteTextBox";
-            this.DisplayQuoteTextBox.Size = new System.Drawing.Size(494, 609);
+            this.DisplayQuoteTextBox.Size = new System.Drawing.Size(494, 400);
             this.DisplayQuoteTextBox.TabIndex = 0;
             this.DisplayQuoteTextBox.Tag = "DisplayQuoteTextBox";
-            this.DisplayQuoteTextBox.TextChanged += new System.EventHandler(this.DisplayQuoteTextBox_TextChanged);
             // 
             // ExitDisplayQuoteButton
             // 
-            this.ExitDisplayQuoteButton.Location = new System.Drawing.Point(402, 638);
+            this.ExitDisplayQuoteButton.Location = new System.Drawing.Point(400, 428);
             this.ExitDisplayQuoteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitDisplayQuoteButton.Name = "ExitDisplayQuoteButton";
             this.ExitDisplayQuoteButton.Size = new System.Drawing.Size(112, 35);
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 692);
+            this.ClientSize = new System.Drawing.Size(532, 474);
             this.Controls.Add(this.ExitDisplayQuoteButton);
             this.Controls.Add(this.DisplayQuoteTextBox);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
