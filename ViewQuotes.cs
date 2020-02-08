@@ -1,13 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk2
@@ -38,7 +32,7 @@ namespace MegaDesk2
             {
                 Console.WriteLine(e);
             }
-     
+
             List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
             dataGridView1.DataSource = quoteList;
             dataGridView1.Columns[3].DefaultCellStyle.Format = "d";

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-/* /* customer full name
+﻿/* /* customer full name
 size of desk in width (minimum 24 inches and maximum 96 inches)
 size of the desk in depth (minimum 12 inches and maximum of 48 inches)
 number of drawers ( zero to seven drawers maximum)

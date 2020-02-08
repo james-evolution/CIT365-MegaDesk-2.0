@@ -1,12 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 /* DeskQuote.cs (Class): This class will define the attributes of a quote 
  * including Desk, rush days, customer name, and quote date. This class will 
@@ -28,7 +24,7 @@ namespace MegaDesk2
         public const int SQUAREPRICE = 1;
         public const int DRAWERPRICE = 50;
         public List<DeskQuote> deskQuotes = new List<DeskQuote>();
-        public void writeQuoteToFile(string customerName, Desk desk, int width, int depth, 
+        public void writeQuoteToFile(string customerName, Desk desk, int width, int depth,
             SurfaceMaterial material, int numberOfDrawers, int rushOrderOptions)
         {
             DeskQuote deskQuote = new DeskQuote();
@@ -36,10 +32,10 @@ namespace MegaDesk2
             deskQuote.Desk = desk;
             deskQuote.Desk.Width = width;
             deskQuote.Desk.Depth = depth;
-            deskQuote.Desk.DeskMaterial = material;            
+            deskQuote.Desk.DeskMaterial = material;
             deskQuote.Desk.NumberOfDrawers = numberOfDrawers;
             deskQuote.ShippingDays = rushOrderOptions;
-            deskQuote.QuoteTotal = calculateTotalQuote(deskQuote.Desk, deskQuote.Desk.Width, 
+            deskQuote.QuoteTotal = calculateTotalQuote(deskQuote.Desk, deskQuote.Desk.Width,
             deskQuote.Desk.Depth, deskQuote.Desk.DeskMaterial, deskQuote.Desk.NumberOfDrawers, deskQuote.ShippingDays);
             deskQuote.QuoteDate = DateTime.Now;
             deskQuote.DeskMaterial = material;
@@ -48,7 +44,7 @@ namespace MegaDesk2
             deskQuote.Width = width;
 
             string date = deskQuote.QuoteDate.ToString("MM/dd/yyyy");
-            
+
 
             string displayOutput = "Customer Name: " + deskQuote.CustomerName + Environment.NewLine +
                             "Desk Width: " + deskQuote.Desk.Width + Environment.NewLine +
@@ -60,7 +56,7 @@ namespace MegaDesk2
                             "Quote Total: $" + deskQuote.QuoteTotal;
             DisplayQuote.Quote = displayOutput;
 
-            if (!File.Exists("..\\..\\quotes.json")) 
+            if (!File.Exists("..\\..\\quotes.json"))
             {
                 File.Create("..\\..\\quotes.json").Close();
             }
@@ -83,7 +79,7 @@ namespace MegaDesk2
             double materialPrice = 0;
             double surfaceArea = width * depth;
             double[,] rushOrderPriceMap = GetRushOrder(surfaceArea, rushOrderOptions);
-            List<int> materialPriceList = new List<int>() {200, 100, 50, 300, 125};
+            List<int> materialPriceList = new List<int>() { 200, 100, 50, 300, 125 };
 
             // Calculate materialPrice.
             if (material == SurfaceMaterial.Oak)
@@ -113,21 +109,21 @@ namespace MegaDesk2
                 case 3:
                     if (surfaceArea < 1000)
                     {
-                        rushPrice = rushOrderPriceMap[0,0];
+                        rushPrice = rushOrderPriceMap[0, 0];
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
-                        rushPrice = rushOrderPriceMap[0,1];
+                        rushPrice = rushOrderPriceMap[0, 1];
                     }
                     else if (surfaceArea > 2000)
                     {
-                        rushPrice = rushOrderPriceMap[0,2];
+                        rushPrice = rushOrderPriceMap[0, 2];
                     }
                     break;
                 case 5:
                     if (surfaceArea < 1000)
                     {
-                        rushPrice = rushOrderPriceMap[1,0];
+                        rushPrice = rushOrderPriceMap[1, 0];
                     }
                     else if (surfaceArea >= 1000 && surfaceArea <= 2000)
                     {
@@ -183,7 +179,7 @@ namespace MegaDesk2
                 rushPricesList.Add(Convert.ToDouble(rushPriceStrings[i]));
             }
 
-            double [,] rushPriceMap = new double[3,3];
+            double[,] rushPriceMap = new double[3, 3];
 
             try
             {
@@ -193,29 +189,29 @@ namespace MegaDesk2
                     if (rushOrderOptions == 3)
                     {
                         if (surfaceArea < 1000)
-                            rushPriceMap[0,0] = price;
+                            rushPriceMap[0, 0] = price;
                         else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                            rushPriceMap[0,1] = price;
+                            rushPriceMap[0, 1] = price;
                         else
-                            rushPriceMap[0,2] = price;
+                            rushPriceMap[0, 2] = price;
                     }
                     else if (rushOrderOptions == 5)
                     {
                         if (surfaceArea < 1000)
-                            rushPriceMap[1,0] = price;
+                            rushPriceMap[1, 0] = price;
                         else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                            rushPriceMap[1,1] = price;
+                            rushPriceMap[1, 1] = price;
                         else
-                            rushPriceMap[1,2] = price;
+                            rushPriceMap[1, 2] = price;
                     }
                     else if (rushOrderOptions == 7)
                     {
                         if (surfaceArea < 1000)
-                            rushPriceMap[2,0] = price;
+                            rushPriceMap[2, 0] = price;
                         else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                            rushPriceMap[2,1] = price;
+                            rushPriceMap[2, 1] = price;
                         else
-                            rushPriceMap[2,2] = price;
+                            rushPriceMap[2, 2] = price;
                     }
                 }
             }
