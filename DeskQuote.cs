@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -76,9 +77,8 @@ namespace MegaDesk2
             double rushPrice = 0;
             double materialPrice = 0;
             double surfaceArea = width * depth;
-
+            double[,] rushOrderPriceMap = GetRushOrder(surfaceArea, rushOrderOptions);
             List<int> materialPriceList = new List<int>() {200, 100, 50, 300, 125};
-
 
             // Calculate materialPrice.
             if (material == SurfaceMaterial.Oak)
@@ -102,8 +102,99 @@ namespace MegaDesk2
                 materialPrice = materialPriceList[4];
             }
 
-            // TextReader reader = File.OpenText("..\\Resources\\rushOrderPrices.txt");
+            //if (rushOrderOptions == 3)
+            //{
+            //    if (surfaceArea < 1000)
+            //        rushPrice = rushOrderPriceMap[0, 0];
+            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+            //        rushPrice = rushOrderPriceMap[0, 0];
+            //    else
+            //        rushPrice = rushOrderPriceMap[0, 0];
+            //}
+            //else if (rushOrderOptions == 5)
+            //{
+            //    if (surfaceArea < 1000)
+            //        rushPriceMap[1, 0] = price;
+            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+            //        rushPriceMap[1, 1] = price;
+            //    else
+            //        rushPriceMap[1, 2] = price;
+            //}
+            //else if (rushOrderOptions == 7)
+            //{
+            //    if (surfaceArea < 1000)
+            //        rushPriceMap[2, 0] = price;
+            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+            //        rushPriceMap[2, 1] = price;
+            //    else
+            //        rushPriceMap[2, 2] = price;
+            //}
 
+            // Calculate rushPrice.
+            switch (rushOrderOptions)
+            {
+                case 3:
+                    if (surfaceArea < 1000)
+                    {
+                        rushPrice = rushOrderPriceMap[0,0];
+                    }
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[0,1];
+                    }
+                    else if (surfaceArea > 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[0,2];
+                    }
+                    break;
+                case 5:
+                    if (surfaceArea < 1000)
+                    {
+                        rushPrice = rushOrderPriceMap[1,0];
+                    }
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[1, 1];
+                    }
+                    else if (surfaceArea > 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[1, 2];
+                    }
+                    break;
+                case 7:
+                    if (surfaceArea < 1000)
+                    {
+                        rushPrice = rushOrderPriceMap[2, 0];
+                    }
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[2, 1];
+                    }
+                    else if (surfaceArea > 2000)
+                    {
+                        rushPrice = rushOrderPriceMap[2, 2];
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Invalid Rush Order Option.", "Error");
+                    break;
+            }
+
+            // Get total price of order
+            if (surfaceArea > 1000)
+            {
+                double total = (surfaceArea * SQUAREPRICE) + (numberOfDrawers * DRAWERPRICE) + rushPrice + materialPrice + 200;
+                return total;
+            }
+            else
+            {
+                double total = (numberOfDrawers * DRAWERPRICE) + rushPrice + materialPrice + 200;
+                return total;
+            }
+        }
+
+        private double[,] GetRushOrder(double surfaceArea, int rushOrderOptions)
+        {
             // Read file as a list of strings, assign it to rushPriceStrings[]
             string[] rushPriceStrings = File.ReadAllLines("..\\..\\Resources\\rushOrderPrices.txt");
 
@@ -116,69 +207,48 @@ namespace MegaDesk2
                 rushPricesList.Add(Convert.ToDouble(rushPriceStrings[i]));
             }
 
-            // Cast rushPricesList to array, assign to rushPrices[].
-            double[] rushPrices = rushPricesList.ToArray();
+            double [,] rushPriceMap = new double[3,3];
 
-            // Calculate rushPrice.
-            switch (rushOrderOptions)
+            try
             {
-                case 3:
-                    if (surfaceArea < 1000)
+                // Add the prices to the 2D pricing map
+                foreach (double price in rushPricesList)
+                {
+                    if (rushOrderOptions == 3)
                     {
-                        rushPrice = rushPrices[0];
+                        if (surfaceArea < 1000)
+                            rushPriceMap[0,0] = price;
+                        else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                            rushPriceMap[0,1] = price;
+                        else
+                            rushPriceMap[0,2] = price;
                     }
-                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    else if (rushOrderOptions == 5)
                     {
-                        rushPrice = rushPrices[1];
+                        if (surfaceArea < 1000)
+                            rushPriceMap[1,0] = price;
+                        else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                            rushPriceMap[1,1] = price;
+                        else
+                            rushPriceMap[1,2] = price;
                     }
-                    else if (surfaceArea > 2000)
+                    else if (rushOrderOptions == 7)
                     {
-                        rushPrice = rushPrices[2];
+                        if (surfaceArea < 1000)
+                            rushPriceMap[2,0] = price;
+                        else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                            rushPriceMap[2,1] = price;
+                        else
+                            rushPriceMap[2,2] = price;
                     }
-                    break;
-                case 5:
-                    if (surfaceArea < 1000)
-                    {
-                        rushPrice = rushPrices[3];
-                    }
-                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                    {
-                        rushPrice = rushPrices[4];
-                    }
-                    else if (surfaceArea > 2000)
-                    {
-                        rushPrice = rushPrices[5];
-                    }
-                    break;
-                case 7:
-                    if (surfaceArea < 1000)
-                    {
-                        rushPrice = rushPrices[6];
-                    }
-                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                    {
-                        rushPrice = rushPrices[7];
-                    }
-                    else if (surfaceArea > 2000)
-                    {
-                        rushPrice = rushPrices[8];
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Something probably went wrong.");
-                    break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error occurred while populating Rush Order data.", "Error");
             }
 
-            if (surfaceArea > 1000)
-            {
-                double total = (surfaceArea * SQUAREPRICE) + (numberOfDrawers * DRAWERPRICE) + rushPrice + materialPrice + 200;
-                return total;
-            }
-            else
-            {
-                double total = (numberOfDrawers * DRAWERPRICE) + rushPrice + materialPrice + 200;
-                return total;
-            }
+            return rushPriceMap;
         }
     }
 }
