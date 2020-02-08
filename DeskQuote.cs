@@ -102,34 +102,6 @@ namespace MegaDesk2
                 materialPrice = materialPriceList[4];
             }
 
-            //if (rushOrderOptions == 3)
-            //{
-            //    if (surfaceArea < 1000)
-            //        rushPrice = rushOrderPriceMap[0, 0];
-            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-            //        rushPrice = rushOrderPriceMap[0, 0];
-            //    else
-            //        rushPrice = rushOrderPriceMap[0, 0];
-            //}
-            //else if (rushOrderOptions == 5)
-            //{
-            //    if (surfaceArea < 1000)
-            //        rushPriceMap[1, 0] = price;
-            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-            //        rushPriceMap[1, 1] = price;
-            //    else
-            //        rushPriceMap[1, 2] = price;
-            //}
-            //else if (rushOrderOptions == 7)
-            //{
-            //    if (surfaceArea < 1000)
-            //        rushPriceMap[2, 0] = price;
-            //    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-            //        rushPriceMap[2, 1] = price;
-            //    else
-            //        rushPriceMap[2, 2] = price;
-            //}
-
             // Calculate rushPrice.
             switch (rushOrderOptions)
             {
