@@ -25,59 +25,7 @@ namespace MegaDesk2
         {
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
-            // This is technically this.Close();
             Close();
-        }
-
-        private void SearchQuotesSearchButton_Click(object sender, EventArgs e)
-        {
-            List<DeskQuote> resultsList = new List<DeskQuote>();
-
-            string[] lines = new string[] { };
-            string json = "";
-
-            try
-            {
-                json = File.ReadAllText("..\\..\\quotes.json");
-                lines = File.ReadAllLines("..\\..\\quotes.json");
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine(e);
-            }
-            for (int i = 0; i < lines.Length; i++)
-            {
-                // ViewQuotesTextBox.AppendText(lines[i] + Environment.NewLine);
-            }
-
-
-            List<DeskQuote> DeskList = new List<DeskQuote>();
-
-            var convertedJson = JsonConvert.SerializeObject(DeskList, Formatting.Indented);
-
-            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-
-            // Control kc = comment, control ku = uncomment.
-
-            for (int i = 0; i < quoteList.Count; i++)
-            {
-                if (quoteList[i].Desk.DeskMaterial == chosenMaterial)
-                {
-                    resultsList.Add(quoteList[i]);
-                }
-            }
-
-            //if (quoteList[0].Desk.DeskMaterial == chosenMaterial)
-            //{
-            //    MessageBox.Show("The material matches.");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("The material does not match.");
-            //}
-
-            // resultsGridView.DataSource = quoteList.Where(x => x.Desk.DeskMaterial == SurfaceMaterial.Rosewood);
-            resultsGridView.DataSource = resultsList;
         }
 
         private void SearchQuotesMaterialComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,11 +50,30 @@ namespace MegaDesk2
             {
                 chosenMaterial = SurfaceMaterial.Pine;
             }
-        }
+            List<DeskQuote> resultsList = new List<DeskQuote>();
+            string json = "";
 
-        private void ResultsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            try
+            {
+                json = File.ReadAllText("..\\..\\quotes.json");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine(e);
+            }
 
+            List<DeskQuote> quoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+            for (int i = 0; i < quoteList.Count; i++)
+            {
+                if (quoteList[i].Desk.DeskMaterial == chosenMaterial)
+                {
+                    resultsList.Add(quoteList[i]);
+                }
+            }
+
+            resultsGridView.DataSource = resultsList;
+            Count.Text = resultsGridView.RowCount.ToString() + " Results";
         }
     }
 }

@@ -31,17 +31,18 @@
             this.ExitSearchQuotesButton = new System.Windows.Forms.Button();
             this.SearchQuotesMaterialComboBox = new System.Windows.Forms.ComboBox();
             this.SearchQuotesSearchMaterialLabel = new System.Windows.Forms.Label();
-            this.SearchQuotesSearchButton = new System.Windows.Forms.Button();
             this.resultsGridView = new System.Windows.Forms.DataGridView();
+            this.Count = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.resultsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitSearchQuotesButton
             // 
             this.ExitSearchQuotesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExitSearchQuotesButton.Location = new System.Drawing.Point(446, 509);
+            this.ExitSearchQuotesButton.Location = new System.Drawing.Point(1295, 533);
+            this.ExitSearchQuotesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitSearchQuotesButton.Name = "ExitSearchQuotesButton";
-            this.ExitSearchQuotesButton.Size = new System.Drawing.Size(113, 23);
+            this.ExitSearchQuotesButton.Size = new System.Drawing.Size(170, 35);
             this.ExitSearchQuotesButton.TabIndex = 0;
             this.ExitSearchQuotesButton.Tag = "ExitSearchQuotesButton";
             this.ExitSearchQuotesButton.Text = "Close";
@@ -57,9 +58,10 @@
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.SearchQuotesMaterialComboBox.Location = new System.Drawing.Point(136, 17);
+            this.SearchQuotesMaterialComboBox.Location = new System.Drawing.Point(204, 14);
+            this.SearchQuotesMaterialComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchQuotesMaterialComboBox.Name = "SearchQuotesMaterialComboBox";
-            this.SearchQuotesMaterialComboBox.Size = new System.Drawing.Size(423, 21);
+            this.SearchQuotesMaterialComboBox.Size = new System.Drawing.Size(166, 28);
             this.SearchQuotesMaterialComboBox.TabIndex = 1;
             this.SearchQuotesMaterialComboBox.Tag = "SearchQuotesMaterialComboBox";
             this.SearchQuotesMaterialComboBox.SelectedIndexChanged += new System.EventHandler(this.SearchQuotesMaterialComboBox_SelectedIndexChanged);
@@ -68,47 +70,46 @@
             // 
             this.SearchQuotesSearchMaterialLabel.AutoSize = true;
             this.SearchQuotesSearchMaterialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchQuotesSearchMaterialLabel.Location = new System.Drawing.Point(13, 13);
+            this.SearchQuotesSearchMaterialLabel.Location = new System.Drawing.Point(13, 9);
+            this.SearchQuotesSearchMaterialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchQuotesSearchMaterialLabel.Name = "SearchQuotesSearchMaterialLabel";
-            this.SearchQuotesSearchMaterialLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.SearchQuotesSearchMaterialLabel.Size = new System.Drawing.Size(117, 27);
+            this.SearchQuotesSearchMaterialLabel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.SearchQuotesSearchMaterialLabel.Size = new System.Drawing.Size(165, 41);
             this.SearchQuotesSearchMaterialLabel.TabIndex = 2;
             this.SearchQuotesSearchMaterialLabel.Tag = "SearchQuotesSearchMaterialLabel";
             this.SearchQuotesSearchMaterialLabel.Text = "Search Material";
             // 
-            // SearchQuotesSearchButton
-            // 
-            this.SearchQuotesSearchButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.SearchQuotesSearchButton.Location = new System.Drawing.Point(12, 509);
-            this.SearchQuotesSearchButton.Name = "SearchQuotesSearchButton";
-            this.SearchQuotesSearchButton.Size = new System.Drawing.Size(113, 23);
-            this.SearchQuotesSearchButton.TabIndex = 3;
-            this.SearchQuotesSearchButton.Tag = "SearchQuotesSearchButton";
-            this.SearchQuotesSearchButton.Text = "Search";
-            this.SearchQuotesSearchButton.UseVisualStyleBackColor = true;
-            this.SearchQuotesSearchButton.Click += new System.EventHandler(this.SearchQuotesSearchButton_Click);
-            // 
             // resultsGridView
             // 
             this.resultsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultsGridView.Location = new System.Drawing.Point(12, 44);
+            this.resultsGridView.Location = new System.Drawing.Point(18, 68);
+            this.resultsGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.resultsGridView.Name = "resultsGridView";
-            this.resultsGridView.Size = new System.Drawing.Size(547, 172);
+            this.resultsGridView.RowHeadersWidth = 62;
+            this.resultsGridView.Size = new System.Drawing.Size(1447, 455);
             this.resultsGridView.TabIndex = 4;
             this.resultsGridView.Tag = "resultsGridView";
-            this.resultsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResultsGridView_CellContentClick);
+            // 
+            // Count
+            // 
+            this.Count.AutoSize = true;
+            this.Count.Location = new System.Drawing.Point(390, 22);
+            this.Count.Name = "Count";
+            this.Count.Size = new System.Drawing.Size(0, 20);
+            this.Count.TabIndex = 5;
             // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ExitSearchQuotesButton;
-            this.ClientSize = new System.Drawing.Size(571, 544);
+            this.ClientSize = new System.Drawing.Size(1478, 579);
+            this.Controls.Add(this.Count);
             this.Controls.Add(this.resultsGridView);
-            this.Controls.Add(this.SearchQuotesSearchButton);
             this.Controls.Add(this.SearchQuotesSearchMaterialLabel);
             this.Controls.Add(this.SearchQuotesMaterialComboBox);
             this.Controls.Add(this.ExitSearchQuotesButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SearchQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Quotes";
@@ -123,7 +124,7 @@
         private System.Windows.Forms.Button ExitSearchQuotesButton;
         private System.Windows.Forms.ComboBox SearchQuotesMaterialComboBox;
         private System.Windows.Forms.Label SearchQuotesSearchMaterialLabel;
-        private System.Windows.Forms.Button SearchQuotesSearchButton;
         private System.Windows.Forms.DataGridView resultsGridView;
+        private System.Windows.Forms.Label Count;
     }
 }
